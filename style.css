@@ -89,6 +89,7 @@
     text-decoration: none;
     color: #56a5eb;
     background-color: white;
+    
   }
   
   .btn:hover {
@@ -117,4 +118,7 @@
    font-size: 1.8rem;
    box-shadow:0 0.1rem 1.4rem 0 skyblue;
    border: none;
+ }
+ p.choice-text{
+   color:white;
  }

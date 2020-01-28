@@ -1,10 +1,11 @@
 .choice-container {
-    display: flex;
+    display: table-row-group;
     margin-bottom: 0.5rem;
     width: 100%;
     font-size: 1.8rem;
-    border: 0.1rem solid rgb(86, 165, 235, 0.25);
-    background-color: white;
+    border: 5.1rem solid rgb(86, 165, 235, 0.25);
+    background-color: violet;
+    color: white;
   }
   
   .choice-container:hover {
@@ -22,6 +23,7 @@
   
   .choice-text {
     padding: 1.5rem;
+    width:100%
   }
   .correct{
     background-color: green;
@@ -41,11 +43,7 @@
     text-align: center;
   }
   button{
-    background-color: blueviolet;
-    border-radius:50px ;
-    -webkit-border-radius:50px ;
-    -moz-border-radius:50px ;
-    -ms-border-radius:50px ;
-    -o-border-radius:50px ;
-   
+   background-color: blueviolet;
+   color: white;
+  
 }

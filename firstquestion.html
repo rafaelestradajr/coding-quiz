@@ -11,11 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="firstquestion.css" />
+    <link rel="stylesheet" href="style.css" />
+
     <title>1stquestion</title>
   </head>
   <body>
-    <div class="container"class="justify-center flex-column ">
-      <div id="game" >
+    <a class="btn" href="./highscores.html"> View High Scores:</a>
+    <div class="container width:100%">
+      <div id="game">
         <div id="hud">
           <div id="hud-item">
             <p class="hud-prefix">question</p>
@@ -23,28 +26,27 @@
             <h1 class="hud-main-text" id="questionCounter"></h1>
           </div>
           <div id="hud-item">
-            <p class="hud-prefix">score</p>
+            <p class="hud-prefix">Score</p>
 
             <h1 class="hud-main-text" id="score">0</h1>
           </div>
         </div>
         <h2 id="question">Commonly used data types DO NOT include:</h2>
         <br />
-        
+
         <div class="choice-container">
-          <p class="choice-prefix">1.</p>
           <p class="choice-text" data-number="1">Choice 1</p>
         </div>
+        <br />
         <div class="choice-container">
-          <p class="choice-prefix">2.</p>
           <p class="choice-text" data-number="2">Choice 2</p>
         </div>
+        <br />
         <div class="choice-container">
-          <p class="choice-prefix">3.</p>
           <p class="choice-text" data-number="3">Choice 3</p>
         </div>
+        <br />
         <div class="choice-container">
-          <p class="choice-prefix">4.</p>
           <p class="choice-text" data-number="4">Choice 4</p>
         </div>
       </div>
@@ -67,5 +69,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   </body>
 </html>

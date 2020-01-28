@@ -14,9 +14,14 @@
     <title>End Quiz</title>
   </head>
   <body>
-    <div class="container">
+    <a class="btn" href="/highscores.html"> View High Scores:</a>
+    <a class="btn" href="/highscores.html"> Time:</a>
+    <div class="container width:100%">
+      <h2>All Done!</h2>
+
       <div id="end" class="flex-center flex-column"></div>
-      <h1 id="finalScore">All Done!</h1>
+      <h1>This is your final score</h1>
+      <h1 id="finalScore"></h1>
 
       <form>
         <input
@@ -32,14 +37,13 @@
           onclick="saveHighScore(event)"
           disabled
         >
-          Save
+          Submit
         </button>
         <a class="btn" href="index.html">Play Again</a>
       </form>
     </div>
     >
     <script src="end.js"></script>
-    <script src="highscores.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

@@ -1,10 +1,7 @@
-
-
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById("questionCounter");
 const scoreText = document.getElementById("score");
-
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -15,49 +12,51 @@ let availableQuestions = [];
 let questions = [
   {
     question: "Commonly used data types DO NOT include",
-    choice1: "<strings>",
-    choice2: "<booleans>",
-    choice3: "<alerts>",
-    choice4: "<numbers>",
+    choice1: "1.<strings>",
+    choice2: "2.<booleans>",
+    choice3: "3.<alerts>",
+    choice4: "4.<numbers>",
     answer: 3
   },
   {
-    question:
-      "The condition in an if/else statement enclosed within_______.",
-    choice1: "<quotes>",
-    choice2: "<curly brackets>",
-    choice3: "<parentheses>",
-    choice4: "<square brackets>",
+    question: "The condition in an if/else statement enclosed within_______.",
+    choice1: "1.<quotes>",
+    choice2: "2.<curly brackets>",
+    choice3: "3.<parentheses>",
+    choice4: "4.<square brackets>",
     answer: 2
   },
   {
     question: " Arrays in JavaScript can be used to store________.",
-    choice1: "numbers and strings",
-    choice2: "other arrays",
-    choice3: "Booleans",
-    choice4: "all the above",
+    choice1: "1.numbers and strings",
+    choice2: "2.other arrays",
+    choice3: "3.Booleans",
+    choice4: "4.all the above",
     answer: 4
   },
   {
-    question: " String values must be enclosed within _____ when being assigned to variables",
-    choice1: "commas",
-    choice2: "curly brackets",
-    choice3: "square brackets",
-    choice4: "quotes",
+    question:
+      " String values must be enclosed within _____ when being assigned to variables",
+    choice1: "1.commas",
+    choice2: "2.curly brackets",
+    choice3: "3.square brackets",
+    choice4: "4.quotes",
     answer: 4
   },
   {
-    question: " A very useful tool used during development and debugging for printing content to the debugger is:",
-    choice1: "Javascript",
-    choice2: "Terminal/bash",
-    choice3: "for loops",
-    choice4: "console.log",
+    question:
+      " A very useful tool used during development and debugging for printing content to the debugger is:",
+    choice1: "1.Javascript",
+    choice2: "2.Terminal/bash",
+    choice3: "3.for loops",
+    choice4: "4.console.log",
     answer: 4
-  },  
+  }
 ];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
+
 const MAX_QUESTIONS = 5;
 
 startGame = () => {
@@ -69,14 +68,13 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) { 
-    localStorage.setItem('mostRecentScore', score);
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    localStorage.setItem("mostRecentScore", score);
     //go to the end page
-    return window.location.assign("/end.html");
+    return window.location.assign("./end.html");
   }
   questionCounter++;
-  questionCounterText.innerText = questionCounter+ "/" +MAX_QUESTIONS;
-
+  questionCounterText.innerHTML = questionCounter + "/" + MAX_QUESTIONS;
 
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -99,27 +97,30 @@ choices.forEach(choice => {
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
-    const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
-    if (classToApply === "correct") {
-      incrementScore(CORRECT_BONUS);
-    }
-  
     selectedChoice.parentElement.classList.add(classToApply);
 
     setTimeout(() => {
-      
-    
-    selectedChoice.parentElement.classList.remove(classToApply);
+      selectedChoice.parentElement.classList.remove(classToApply);
+      if (classToApply === "correct") {
+        incrementScore(CORRECT_BONUS);
+        alert("CORRECT!");
+      } else {
+        alert("INCORRECT!");
+      }
 
-    getNewQuestion();
-  }, 1000);
-
+      getNewQuestion();
+    }, 1000);
   });
 });
+
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
+};
+var fileName = window.location.pathname.split("/");
+if (fileName[fileName.length - 1] == "firstquestion.html") {
+  startGame();
 }
-
-startGame();
